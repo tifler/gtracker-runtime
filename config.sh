@@ -3,11 +3,11 @@ export HOSTUSER=${USER}
 
 # mariadb
 export MARIA_DB_USER=root
+export MARIA_ROOT_PASSWORD=mobiustest
 export MARIA_DB_PASS=${MARIA_ROOT_PASSWORD}
 export MARIA_DB_HOST=210.219.210.195
 export MARIA_DB_PORT=3306
 export MARIA_DB_HOST_PATH=$PWD/db/
-export MARIA_ROOT_PASSWORD=mobiustest
 
 # mobius
 export MOBIUS_HOST=${MARIA_DB_HOST}
