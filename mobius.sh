@@ -10,6 +10,7 @@ case "$1" in
         echo -n "Starting docker: "
         docker \
             run \
+            -d \
             --rm \
             --name ${DOCKERNAME} \
             --env MOBIUS_DB_PASS=${MARIA_DB_PASS} \
