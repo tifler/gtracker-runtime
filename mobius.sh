@@ -3,7 +3,7 @@
 source config.sh
 
 DOCKERNAME=gtracker-mobius-${HOSTUSER}
-DOCKER=gtracker-mobius:latest
+DOCKER=gtracker-mobius:1.0
 
 case "$1" in
     start)
