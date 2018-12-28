@@ -2,22 +2,10 @@
 
 source config.sh
 
-DOCKERNAME=mobius-${HOSTUSER}
-DOCKER=nungdo/mobius-docker:latest
-#DOCKER=mobius:0.1
+DOCKERNAME=gtracker-mobius-${HOSTUSER}
+DOCKER=gtracker-mobius:latest
 
 case "$1" in
-    install)
-        echo -n "Starting docker: "
-        docker \
-            run -it \
-            --rm \
-            --name ${DOCKERNAME} \
-            --env MOBIUS_DB_PASS=${MARIA_DB_PASS} \
-            --env MOBIUS_DB_PORT=${MARIA_DB_PORT} \
-            --env MOBIUS_DB_HOST=${MARIA_DB_HOST} \
-            ${DOCKER} /bin/install-mobius-db.sh
-    ;;
     start)
         echo -n "Starting docker: "
         docker \
