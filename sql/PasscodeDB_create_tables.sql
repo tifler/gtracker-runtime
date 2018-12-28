@@ -1,0 +1,4 @@
+CREATE TABLE Passcode(
+PSID INT(11) auto_increment PRIMARY KEY,
+Passcode NVARCHAR(20) NOT NULL,
+SerialNo NVARCHAR(20) NOT NULL);
