@@ -2,7 +2,7 @@
 
 source config.sh
 
-if [ $# -ne 3 ]; then
+if [ $# -ne 2 ]; then
     echo "Usage: $0 <serial> <passcode>"
     exit 1
 fi
