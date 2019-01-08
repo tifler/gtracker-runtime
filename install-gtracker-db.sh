@@ -7,10 +7,10 @@ echo "create database GTRACKERDATADB;" | mysql -u ${MARIA_DB_USER} --password=${
 echo "Step 2/6 --"
 echo "create database PASSCODEDB;" | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT}
 echo "Step 3/6 --"
-echo "create database APIKEYDB;" | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT}
+echo "create database APIKey;" | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT}
 echo "Step 4/6 --"
-cat sql/GtrackerdataDB_create_tables.sql | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT} --database=GTRACKERDATADB
+cat sql/GTracker.sql | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT} --database=GTRACKERDATADB
 echo "Step 5/6 --"
-cat sql/PasscodeDB_create_tables.sql | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT} --database=PASSCODEDB
+cat sql/Passcode.sql | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT} --database=PASSCODEDB
 echo "Step 6/6 --"
-cat sql/APIKEYDB_create_tables.sql | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT} --database=APIKEYDB
+cat sql/APIKey.sql | mysql -u ${MARIA_DB_USER} --password=${MARIA_DB_PASS} --protocol=tcp --host=${MARIA_DB_HOST} --port=${MARIA_DB_PORT} --database=APIKEYDB
