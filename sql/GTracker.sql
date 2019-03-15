@@ -13,7 +13,7 @@ enableAlarmZone VARCHAR(2) NOT NULL,
 alarmZones VARCHAR(1024));
 
 CREATE TABLE Privileges(
-  PID INT(11) auto_increment PRIMARY KEY,
-  DID INT(11) NOT NULL,
-  UID INT(11) NOT NULL,
-  Privileges NVARCHAR(20));
+PID INT(11) auto_increment PRIMARY KEY,
+DID INT(11) NOT NULL,
+UID INT(11) NOT NULL,
+Privileges NVARCHAR(20));
