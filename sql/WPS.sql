@@ -1,0 +1,8 @@
+CREATE TABLE WPS (
+    Id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    mac1 VARCHAR(20) NOT NULL,
+    mac2 VARCHAR(20) NOT NULL,
+    lat DOUBLE,
+    lng DOUBLE,
+    accuracy INT
+);
