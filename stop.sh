@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source config.sh
-
-docker stop mysql-${HOSTUSER} mobius-${HOSTUSER}
-docker rm mysql-${HOSTUSER} mobius-${HOSTUSER}
+./gtracker-server.sh stop
+./gtracker-proxy.sh stop
+./gtracker-admin.sh stop
+./mobius.sh stop
+./mariadb.sh stop
