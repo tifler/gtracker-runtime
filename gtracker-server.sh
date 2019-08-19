@@ -3,7 +3,7 @@
 source config.sh
 
 DOCKERNAME=gtracker-server-${HOSTUSER}
-DOCKER=gtracker-server:1.0
+DOCKER=gtracker-server:latest
 
 case "$1" in
     start)
@@ -22,8 +22,10 @@ case "$1" in
             --env GTRACKER_DB_PORT=${GTRACKER_DB_PORT} \
             --env GTRACKER_DB_HOST=${GTRACKER_DB_HOST} \
             --env GTRACKER_SERVER_PORT=${GTRACKER_SERVER_PORT} \
+            --env GTRACKER_PROXY_HOST=${GTRACKER_PROXY_HOST} \
+            --env GTRACKER_PROXY_PORT=${GTRACKER_PROXY_PORT} \
             --env GEOLOCATION_API_KEY=${GEOLOCATION_API_KEY} \
-            ${DOCKER} node server.js
+            ${DOCKER} npm start
     ;;
     start-it)
         echo -n "Starting docker: "
@@ -41,8 +43,10 @@ case "$1" in
             --env GTRACKER_DB_PORT=${GTRACKER_DB_PORT} \
             --env GTRACKER_DB_HOST=${GTRACKER_DB_HOST} \
             --env GTRACKER_SERVER_PORT=${GTRACKER_SERVER_PORT} \
+            --env GTRACKER_PROXY_HOST=${GTRACKER_PROXY_HOST} \
+            --env GTRACKER_PROXY_PORT=${GTRACKER_PROXY_PORT} \
             --env GEOLOCATION_API_KEY=${GEOLOCATION_API_KEY} \
-            ${DOCKER} node server.js
+            ${DOCKER} npm start
     ;;
     bash)
         echo -n "Starting docker: "
@@ -59,6 +63,8 @@ case "$1" in
             --env GTRACKER_DB_PORT=${GTRACKER_DB_PORT} \
             --env GTRACKER_DB_HOST=${GTRACKER_DB_HOST} \
             --env GTRACKER_SERVER_PORT=${GTRACKER_SERVER_PORT} \
+            --env GTRACKER_PROXY_HOST=${GTRACKER_PROXY_HOST} \
+            --env GTRACKER_PROXY_PORT=${GTRACKER_PROXY_PORT} \
             --env GEOLOCATION_API_KEY=${GEOLOCATION_API_KEY} \
             ${DOCKER} bash
     ;;

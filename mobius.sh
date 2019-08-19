@@ -3,7 +3,7 @@
 source config.sh
 
 DOCKERNAME=gtracker-mobius-${HOSTUSER}
-DOCKER=gtracker-mobius:1.0
+DOCKER=gtracker-mobius:latest
 
 case "$1" in
     start)
@@ -16,8 +16,6 @@ case "$1" in
             --env MOBIUS_DB_PASS=${MARIA_DB_PASS} \
             --env MOBIUS_DB_PORT=${MARIA_DB_PORT} \
             --env MOBIUS_DB_HOST=${MARIA_DB_HOST} \
-            --publish ${MOBIUS_HTTP_PORT}:7579 \
-            --publish ${MOBIUS_MQTT_PORT}:1883 \
             ${DOCKER} bash /bin/start-mobius.sh
     ;;
     start-it)
@@ -30,8 +28,6 @@ case "$1" in
             --env MOBIUS_DB_PASS=${MARIA_DB_PASS} \
             --env MOBIUS_DB_PORT=${MARIA_DB_PORT} \
             --env MOBIUS_DB_HOST=${MARIA_DB_HOST} \
-            --publish ${MOBIUS_HTTP_PORT}:7579 \
-            --publish ${MOBIUS_MQTT_PORT}:1883 \
             ${DOCKER} bash /bin/start-mobius.sh
     ;;
     bash)
@@ -43,8 +39,6 @@ case "$1" in
             --env MOBIUS_DB_PASS=${MARIA_DB_PASS} \
             --env MOBIUS_DB_PORT=${MARIA_DB_PORT} \
             --env MOBIUS_DB_HOST=${MARIA_DB_HOST} \
-            --publish ${MOBIUS_HTTP_PORT}:7579 \
-            --publish ${MOBIUS_MQTT_PORT}:1883 \
             ${DOCKER} bash
     ;;
     stop)
